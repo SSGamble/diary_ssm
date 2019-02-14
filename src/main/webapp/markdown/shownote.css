@@ -1,0 +1,134 @@
+.editormd-preview-active {
+    width: 62%;
+    margin: auto;
+    padding: 2em;
+    padding-top: 1em;
+}
+
+.editormd-preview {
+    top:0px;
+}
+
+/* 关闭预览界面按钮 */
+.editormd-preview-close-btn {
+    visibility: hidden;
+}
+
+/* 图片 */
+.markdown-body img {
+    width: 60%;
+    max-width: 80%;
+    margin:0 auto;
+    display:block;
+}
+
+
+/* 图片对应的文字 */
+.markdown-body em{
+    text-decoration: underline;
+    text-align: center;
+    width: 100%;
+    min-height: 22px;
+    display: inline-block;
+    padding: 10px;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #969696;
+    line-height: 1.7;
+}
+
+.markdown-body strong{
+    color: red;
+}
+
+.sub {
+    float: right;
+    position: absolute;
+    top: 53px;
+    right: 102px;
+}
+
+/* 字体 */
+.editormd-preview-container, .editormd-html-preview {
+    font-size: 22px;
+    line-height: 40px;
+}
+
+/* 引用 */
+.editormd-preview-container blockquote, .editormd-html-preview blockquote {
+    color: #ff9642;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    margin-top: 20px;
+    margin-bottom: 6px;
+}
+
+/* del */
+.editormd-preview-container del, .editormd-html-preview del {
+    color: #83b5fa;
+    font-size: 20px;
+    text-decoration: none;
+    /*font-weight: bold;*/
+}
+
+/* 标题 */
+.markdown-body h1 {
+    color: #3e8ea9;
+    text-align:center;
+    font-size: 2em;
+    font-family: "华文行楷";
+}
+
+.markdown-body h2 {
+    color: #000000;
+    font-size: 1.4em;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    padding: 0px;
+    border-bottom: 0;
+}
+
+.markdown-body h3 {
+    color:#595959;
+    font-size: 1.3em;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    padding: 0px;
+}
+
+.markdown-body h4 {
+    color:#244061;
+    font-size: 1.2em;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    padding: 0px;
+}
+
+.markdown-body h5 {
+    color:#31849B;
+    font-size: 1.1em;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    padding: 0px;
+}
+
+.markdown-body h6 {
+    color:#404040;
+    font-size: 1em;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    padding: 0px;
+}
+
+/* toc 目录*/
+.markdown-toc-list{
+    position: fixed;
+    left: 1px;
+    top: 100px;
+    max-width: 330px;
+}
+
+.markdown-body ul, .markdown-body ol {
+    margin-bottom: 16px;
+}

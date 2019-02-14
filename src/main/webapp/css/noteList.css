@@ -1,0 +1,194 @@
+a {
+    font-weight: 600;
+}
+
+/* a 标签，鼠标悬浮样式 */
+a:focus, a:hover {
+    color: #c41212;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* header */
+.i_header{
+    width: 100%;
+    height: 6%;
+    min-height: 4em;
+    background-color: #398DEE;
+    padding: 0.5%;
+}
+
+/* header 的按钮组(新增/笔记总数) */
+.button_group{
+    height: auto;
+    width: auto;
+}
+
+.button_group>.btn-default{
+    width: 6em;
+    font-weight: 600;
+    color: #337ab7;
+}
+
+.i_content{
+    width: 100%;
+    height: 100%;
+}
+
+/* 一级菜单 */
+.group1{
+    width: 10%;
+    height: 100%;
+    float: left;
+    background-color: #F5F5F5;
+}
+
+/* 二级菜单 */
+.group2{
+    width: 10%;
+    height: 100%;
+    float: left;
+    background-color: oldlace;
+}
+.note_list{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+/*------------------------------------------ Main 表格 start ------------------------------------------*/
+.table_list{
+    font-size: 1.2em;
+    padding: 0 1em;
+}
+.default_td{
+    background-color: #a2d2e1;
+}
+.stick_td{
+    background-color: #b8e147;
+}
+.default_td:focus,.default_td:hover{
+    /*background-color: #00a8c6;*/
+}
+td:focus,td:hover{
+    /*background-color: #00a8c6;*/
+}
+.table_ul{
+    float: right;
+    margin-right: 2em;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    line-height: 2;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.05);
+}
+/*------------------------------------------ Main 表格 end ------------------------------------------*/
+
+/* 预览栏 */
+.preview{
+    font-size: large;
+    width: 30%;
+    height: 100%;
+    float: left;
+    background-color: #F5F5F5;
+}
+.password-ajax{
+    width: 300px;
+    height:80px;
+    padding: 22px;
+    margin: auto;
+    margin-top: 340px;
+    background-color: #ff933f;
+}
+#dailyPassword{
+    width:auto;
+    display: inline;
+}
+
+/* 分页 */
+.nav_page{
+    width: 100%;
+    margin: 0;
+}
+
+.pagination {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {*/
+    /*background-color: #398dee;*/
+/*}*/
+
+/*------------------------------------------ 下拉菜单 start ------------------------------------------*/
+.topnav {
+    width: 213px;
+    padding: 40px 28px 25px 0;
+    font-family: "CenturyGothicRegular", "Century Gothic", Arial, Helvetica, sans-serif;
+}
+
+ul.topnav {
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+    line-height: 0.5em;
+    list-style: none;
+}
+
+ul.topnav li {}
+
+ul.topnav li a {
+    line-height: 10px;
+    font-size: 1.5em;
+    padding: 10px 5px;
+    color: #000;
+    display: block;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+ul.topnav li a:hover {
+    background-color:#675C7C;
+    color:white;
+}
+
+ul.topnav ul {
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+ul.topnav ul li {
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
+
+ul.topnav ul li a {
+    padding-left: 20px;
+    font-size: 1.2em;
+    font-weight: normal;
+    outline:0;
+}
+
+ul.topnav ul li a:hover {
+    background-color:#D3C99C;
+    color:#675C7C;
+}
+
+ul.topnav ul ul li a {
+    color:silver;
+    padding-left: 40px;
+}
+
+ul.topnav ul ul li a:hover {
+    background-color:#D3CEB8;
+    color:#675C7C;
+}
+
+ul.topnav span{
+    float:right;
+}
+/*------------------------------------------ 下拉菜单 end ------------------------------------------*/

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.qingrang.dao.IDailyListDao">
+    <select id="selectDailyListByYear" resultType="DailyList">
+        select * from dailylist WHERE date LIKE #{year} '%' ORDER by id desc;
+    </select>
+
+    <select id="selectDailyByID" resultType="DailyList">
+        select * from dailylist WHERE id = #{id};
+    </select>
+
+    <select id="selectDailyListBySearch" resultType="DailyList">
+        select * from dailylist WHERE content LIKE '%' #{searchKey} '%';
+    </select>
+</mapper>

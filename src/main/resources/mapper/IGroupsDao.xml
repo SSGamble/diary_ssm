@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.qingrang.dao.IGroupsDao">
+  <select id="selectGroupList" resultType="Groups">
+    SELECT * FROM groups WHERE id != 2 ORDER BY groups
+  </select>
+
+  <select id="selectRootGroupList" resultType="Groups">
+    SELECT * FROM groups WHERE parent_id != 2 AND id != 2 ORDER BY groups
+  </select>
+
+  <select id="selectComputerGroupList" resultType="Groups">
+    SELECT * FROM groups where parent_id = 2 ORDER BY groups
+  </select>
+
+  <select id="selectGroupByGroupName" resultType="Groups">
+    select * from groups WHERE groups = #{groups}
+  </select>
+
+  <update id="updateGroupCount">
+    update groups set g_count = #{g_count} where groups = #{groups}
+  </update>
+</mapper>

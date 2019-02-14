@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.qingrang.dao.IYearListDao">
+    
+    <select id="selectYearByGroup" resultType="YearList">
+      select * from yearlist WHERE `group` = #{group} and year = #{year};
+    </select>
+
+    <select id="selectYearByGroupOther" resultType="YearList">
+      select * from yearlist WHERE `group` = #{group} AND rank > 1 and year = #{year};
+    </select>
+
+    <select id="selectYearByGroupTop" resultType="YearList">
+      select * from yearlist WHERE `group` = #{group} AND rank = 1 and year = #{year};
+    </select>
+
+    <insert id="insertYearList">
+      insert into yearlist(nid,rank,name,img,`desc`,`group`,year) VALUES (#{nid},#{rank},#{name},#{img},#{desc},#{group},#{year})
+    </insert>
+</mapper>

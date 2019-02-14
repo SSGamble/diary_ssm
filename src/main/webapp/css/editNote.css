@@ -1,0 +1,83 @@
+body{
+    background-color: #2A383E;
+}
+#test-editormd{
+    width: 100%;
+}
+.editormd-preview-active {
+    align-content: center;
+    width: 60%;
+    padding: 40px;
+    margin: auto;
+}
+
+/* 图片 */
+.markdown-body img {
+    max-width: 60%;
+    margin:0 auto;
+    display:block;
+}
+
+/* 图片对应的文字 */
+.markdown-body em{
+    text-decoration: underline;
+    text-align: center;
+    width: 100%;
+    min-height: 22px;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #969696;
+    line-height: 1.7;
+}
+
+h1{
+    color: #3e8ea9;
+    text-align:center;
+}
+.markdown-body h1 {
+    color: #3e8ea9;
+    text-align:center;
+}
+
+.markdown-body strong{
+    color: red;
+}
+
+.sub {
+    width: auto;
+}
+
+.editormd-preview-container blockquote, .editormd-html-preview blockquote {
+    color: #ff7c09;
+    font-weight: bold;
+    font-size: 14px;
+    font-style: normal;
+    padding-left: 10px;
+}
+
+.editormd .CodeMirror pre {
+    font-size: 19px;
+}
+
+/* 删除线 编辑预览 */
+.markdown-body del {
+    color: #83b5fa;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* 删除线 编辑 */
+.cm-strikethrough {
+    color: #83b5fa;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.sel_div{
+    width: auto;
+    float: right;
+    margin-right: 95px;
+}
+
+

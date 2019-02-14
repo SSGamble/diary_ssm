@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.qingrang.dao.INoteDao">
+
+  <select id="selectNoteTotal" resultType="int">
+    SELECT COUNT(*) FROM note
+  </select>
+
+  <select id="selectNoteList" resultType="Note">
+    SELECT * FROM note WHERE id > 4 ORDER by gmt_modified desc,id desc
+  </select>
+
+  <select id="selectStickNoteList" resultType="Note">
+    SELECT * FROM note WHERE is_show = 1 ORDER by gmt_modified desc
+  </select>
+
+  <select id="selectNoteListByLimit" resultType="Note">
+    SELECT * FROM note WHERE id > 4 ORDER by gmt_modified desc,id desc LIMIT #{start},#{size}
+  </select>
+
+  <select id="selectNoteListByLimitToCurrentGroup" resultType="Note">
+    SELECT * FROM note WHERE groups = #{currentGroup} AND id > 4 ORDER by gmt_modified desc,id desc LIMIT #{start},#{size}
+  </select>
+
+  <select id="selectNoteListByLimitToSearch" resultType="Note">
+    SELECT * FROM note WHERE title like #{searchKey} AND id > 4 ORDER by gmt_modified desc,id desc LIMIT #{start},#{size}
+  </select>
+
+  <select id="selectNoteListByGroup" resultType="Note">
+    SELECT * FROM note WHERE groups = #{groupName} AND id > 4 ORDER by gmt_modified desc,id desc
+  </select>
+
+  <select id="selectNoteListBySearchToGroupAndContent" resultType="Note">
+    SELECT * FROM note where id > 4 AND groups LIKE '%' #{groups} '%'
+    <if test="contentArr.length > 0">
+      and content LIKE
+      <foreach collection="contentArr" item="contentArr" close="ORDER by id desc" separator="and content like">
+        '%' #{contentArr} '%'
+      </foreach>
+    </if>
+  </select>
+
+  <select id="selectNoteListBySearchTitle" resultType="Note">
+    SELECT * FROM note WHERE title LIKE #{searchKey} AND id > 4 ORDER by gmt_modified desc,id desc
+  </select>
+
+  <select id="selectNoteListBySearchContent" resultType="Note">
+    SELECT * FROM note
+    <if test="array.length > 0">
+      WHERE content LIKE
+      <foreach collection="array" item="key" close="AND id > 4 ORDER by id desc" separator="and content like">
+        '%' #{key} '%'
+      </foreach>
+    </if>
+  </select>
+
+  <select id="selectDefaultNoteList" resultType="Note">
+    SELECT * FROM note WHERE id &lt; 5
+  </select>
+
+  <select id="selectNoteByID" resultType="Note">
+    SELECT * FROM note WHERE id = #{id}
+  </select>
+
+  <insert id="insertNote">
+    insert into note(title,summary,content,date,groups,p_id,is_show,publish,gmt_modified) VALUES (#{title},#{summary},#{content},#{date},#{groups},#{p_id},#{is_show},#{publish},#{gmt_modified})
+    <selectKey resultType="int" keyProperty="id" order="AFTER">
+      select @@identity
+    </selectKey>
+  </insert>
+
+  <insert id="insertNoteToRecover">
+    insert into note_del(id,title,summary,content,date,groups,p_id,is_show,publish,gmt_modified) VALUES (#{id},#{title},#{summary},#{content},#{date},#{groups},#{p_id},#{is_show},#{publish},#{gmt_modified})
+  </insert>
+
+  <delete id="deleteNoteByID">
+    DELETE FROM note WHERE id = #{id}
+  </delete>
+
+  <update id="updateNoteByID">
+    update note set title=#{title},summary=#{summary},content=#{content},date=#{date},groups=#{groups},
+      is_show=#{is_show},publish=#{publish},gmt_modified=#{gmt_modified} WHERE id=#{id}
+  </update>
+
+  <update id="updateNoteDraft">
+    update note set title=#{title},content=#{content} WHERE id = 1
+  </update>
+
+</mapper>
